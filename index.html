@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-House - Digital Growth for Creative Entrepreneurs</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFAF5;
+            --text: #2D2D2D;
+            --accent1: #FF6847;
+            --accent2: #95DEFF;
+            --accent3: #FFD166;
+            --dark: #2D2D2D;
+            --light: #FFFFFF;
+            --border: #EFEFEF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 250, 245, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        
+        .header-scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent1);
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        
+        .primary-btn {
+            background-color: var(--accent1);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-weight: 500;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 104, 71, 0.3);
+        }
+        
+        /* Hero */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+        }
+        
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background-color: var(--accent2);
+            opacity: 0.2;
+            top: -100px;
+            right: -150px;
+        }
+        
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--accent3);
+            opacity: 0.15;
+            bottom: -100px;
+            left: -100px;
+        }
+        
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--accent1);
+            opacity: 0.1;
+            bottom: 100px;
+            right: 30%;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .hero-title {
+            font-size: 60px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+        
+        .hero-title span {
+            color: var(--accent1);
+        }
+        
+        .hero-description {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+        
+        .phone-mockup {
+            max-width: 100%;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+            transition: all 0.3s ease;
+        }
+        
+        .phone-mockup:hover {
+            transform: translateY(-10px) rotate(-2deg);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 120px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .section-title span {
+            color: var(--accent1);
+        }
+        
+        .section-description {
+            font-size: 20px;
+            color: #606060;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+        
+        .feature-content {
+            padding: 30px;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+        }
+        
+        .icon-orange {
+            background-color: rgba(255, 104, 71, 0.1);
+            color: var(--accent1);
+        }
+        
+        .icon-blue {
+            background-color: rgba(149, 222, 255, 0.2);
+            color: #2AABDE;
+        }
+        
+        .icon-yellow {
+            background-color: rgba(255, 209, 102, 0.2);
+            color: #E8AB00;
+        }
+        
+        .feature-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .feature-description {
+            color: #606060;
+            margin-bottom: 20px;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            position: relative;
+        }
+        
+        .process-connector {
+            position: absolute;
+            left: 40px;
+            top: 60px;
+            bottom: 60px;
+            width: 2px;
+            background-color: var(--accent1);
+            opacity: 0.3;
+        }
+        
+        .process-step {
+            display: flex;
+            gap: 40px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            background-color: var(--accent1);
+            color: white;
+            font-size: 36px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(255, 104, 71, 0.3);
+            z-index: 2;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .step-description {
+            font-size: 18px;
+            color: #606060;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        
+        .step-image {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .step-image:hover {
+            transform: scale(1.02);
+        }
+        
+        /* SCCG Framework */
+        .sccg-framework {
+            padding: 120px 0;
+            background-color: white;
+        }
+        
+        .framework-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .framework-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .framework-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+        
+        .framework-title span {
+            color: var(--accent1);
+        }
+        
+        .framework-description {
+            font-size: 18px;
+            color: #606060;
+            margin-bottom: 40px;
+        }
+        
+        .framework-list {
+            list-style: none;
+        }
+        
+        .framework-item {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .framework-item-icon {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border-radius: 12px;
+        }
+        
+        .framework-item-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .framework-item-content p {
+            color: #606060;
+        }
+        
+        .framework-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .framework-mockup {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .framework-mockup:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-shapes .shape-1 {
+            top: -150px;
+            left: -100px;
+            right: auto;
+        }
+        
+        .testimonials-shapes .shape-2 {
+            bottom: -100px;
+            right: -100px;
+            left: auto;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-content {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background-color: var(--accent1);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-shapes .shape {
+            background-color: white;
+            opacity: 0.1;
+        }
+        
+        .cta-container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-description {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 100px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-input {
+            flex: 1;
+            border: none;
+            padding: 16px 24px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .cta-button {
+            background-color: var(--dark);
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            font-weight: 500;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #000;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 40px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent1);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+        }
+        
+        .footer-about p {
+            margin-bottom: 30px;
+            opacity: 0.8;
+            max-width: 350px;
+        }
+        
+        .footer-heading {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent1);
+        }
+        
+        .footer-divider {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent1);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .section-title, .framework-title, .cta-title {
+                font-size: 36px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .process-steps {
+                padding-left: 20px;
+            }
+            
+            .process-connector {
+                left: 20px;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-description, .section-description, .cta-description {
+                font-size: 18px;
+            }
+            
+            .section-title, .framework-title, .cta-title {
+                font-size: 30px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-step {
+                flex-direction: column;
+            }
+            
+            .process-connector {
+                display: none;
+            }
+            
+            .cta-form {
+                flex-direction: column;
+                border-radius: 16px;
+            }
+            
+            .cta-input {
+                width: 100%;
+                border-bottom: 1px solid #eee;
+                text-align: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span class="logo-dot"></span>
+                    In-House
+                </div>
+                <button class="primary-btn">Get Early Access</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Super simple <span>digital growth</span> for creative businesses</h1>
+                    <p class="hero-description">Turn your Instagram and WhatsApp into powerful sales channels with zero technical setup.</p>
+                    <button class="primary-btn">Get Started <span>→</span></button>
+                </div>
+                <div class="hero-image">
+                    <object type="image/svg+xml" data="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20580%22%3E%0A%20%20%3C%21--%20Phone%20Frame%20--%3E%0A%20%20%3Crect%20x%3D%2240%22%20y%3D%2210%22%20width%3D%22320%22%20height%3D%22560%22%20rx%3D%2230%22%20fill%3D%22%232D2D2D%22%20%2F%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%2220%22%20width%3D%22300%22%20height%3D%22540%22%20rx%3D%2225%22%20fill%3D%22%23FFFAF5%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Status%20Bar%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%2220%22%20width%3D%22300%22%20height%3D%2240%22%20rx%3D%2210%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2280%22%20cy%3D%2240%22%20r%3D%228%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Crect%20x%3D%22100%22%20y%3D%2236%22%20width%3D%2260%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Crect%20x%3D%22240%22%20y%3D%2236%22%20width%3D%2240%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Crect%20x%3D%22290%22%20y%3D%2236%22%20width%3D%2230%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%23DDD%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Navigation%20--%3E%0A%20%20%3Crect%20x%3D%2270%22%20y%3D%2270%22%20width%3D%22260%22%20height%3D%2240%22%20rx%3D%2210%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2290%22%20cy%3D%2290%22%20r%3D%2215%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2290%22%20y%3D%2295%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22%23FF6847%22%3EIN%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22130%22%20y%3D%2295%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2216%22%20fill%3D%22%232D2D2D%22%3EIn-House%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22300%22%20cy%3D%2290%22%20r%3D%2215%22%20fill%3D%22%23F8F8F8%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%2295%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22%232D2D2D%22%3E3%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Product%201%20--%3E%0A%20%20%3Crect%20x%3D%2270%22%20y%3D%22130%22%20width%3D%22120%22%20height%3D%22140%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20%2F%3E%0A%20%20%3Crect%20x%3D%2270%22%20y%3D%22130%22%20width%3D%22120%22%20height%3D%2290%22%20rx%3D%2210%22%20fill%3D%22%2395DEFF%22%20opacity%3D%220.4%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22130%22%20cy%3D%22175%22%20r%3D%2225%22%20fill%3D%22%2395DEFF%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22130%22%20y%3D%22180%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%A7%B6%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%22240%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2212%22%20fill%3D%22%232D2D2D%22%3EHandmade%20Bag%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%22260%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20fill%3D%22%23FF6847%22%3E%E2%82%B91%2C299%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Product%202%20--%3E%0A%20%20%3Crect%20x%3D%22210%22%20y%3D%22130%22%20width%3D%22120%22%20height%3D%22140%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20%2F%3E%0A%20%20%3Crect%20x%3D%22210%22%20y%3D%22130%22%20width%3D%22120%22%20height%3D%2290%22%20rx%3D%2210%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.4%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22270%22%20cy%3D%22175%22%20r%3D%2225%22%20fill%3D%22%23FFD166%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22270%22%20y%3D%22180%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%8D%B0%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22220%22%20y%3D%22240%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2212%22%20fill%3D%22%232D2D2D%22%3ECelebration%20Cake%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22220%22%20y%3D%22260%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20fill%3D%22%23FF6847%22%3E%E2%82%B9899%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Product%203%20--%3E%0A%20%20%3Crect%20x%3D%2270%22%20y%3D%22290%22%20width%3D%22120%22%20height%3D%22140%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20%2F%3E%0A%20%20%3Crect%20x%3D%2270%22%20y%3D%22290%22%20width%3D%22120%22%20height%3D%2290%22%20rx%3D%2210%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22130%22%20cy%3D%22335%22%20r%3D%2225%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.6%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22130%22%20y%3D%22340%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%A7%A3%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%22400%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2212%22%20fill%3D%22%232D2D2D%22%3ECrochet%20Scarf%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%22420%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20fill%3D%22%23FF6847%22%3E%E2%82%B9799%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Product%204%20--%3E%0A%20%20%3Crect%20x%3D%22210%22%20y%3D%22290%22%20width%3D%22120%22%20height%3D%22140%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20%2F%3E%0A%20%20%3Crect%20x%3D%22210%22%20y%3D%22290%22%20width%3D%22120%22%20height%3D%2290%22%20rx%3D%2210%22%20fill%3D%22%2395DEFF%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22270%22%20cy%3D%22335%22%20r%3D%2225%22%20fill%3D%22%2395DEFF%22%20opacity%3D%220.6%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22270%22%20y%3D%22340%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%8E%81%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22220%22%20y%3D%22400%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2212%22%20fill%3D%22%232D2D2D%22%3EGift%20Box%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22220%22%20y%3D%22420%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20fill%3D%22%23FF6847%22%3E%E2%82%B91%2C499%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Tab%20Bar%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%22500%22%20width%3D%22300%22%20height%3D%2260%22%20rx%3D%2215%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22100%22%20cy%3D%22530%22%20r%3D%2220%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%22535%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22%23FF6847%22%3E%F0%9F%8F%A0%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%22530%22%20r%3D%2220%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22200%22%20y%3D%22535%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22%23888%22%3E%F0%9F%94%8D%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22530%22%20r%3D%2220%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22535%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22%23888%22%3E%F0%9F%91%A4%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20iPhone%20Notch%20--%3E%0A%20%20%3Cpath%20d%3D%22M170%2C20%20L230%2C20%20C235%2C20%20240%2C25%20240%2C30%20L240%2C35%20C240%2C38%20237%2C40%20234%2C40%20L166%2C40%20C163%2C40%20160%2C38%20160%2C35%20L160%2C30%20C160%2C25%20165%2C20%20170%2C20%20Z%22%20fill%3D%22%232D2D2D%22%20%2F%3E%0A%3C%2Fsvg%3E" class="phone-mockup" alt="In-House app showcasing a product catalog">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-intro">
+                <h2 class="section-title">Built for <span>micro-entrepreneurs</span> who care about craft</h2>
+                <p class="section-description">Helping aunty's cake business, mom's handmade crafts, and creative services thrive online</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <object type="image/svg+xml" data="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%3E%0A%20%20%3C%21--%20Background%20--%3E%0A%20%20%3Crect%20width%3D%22400%22%20height%3D%22240%22%20fill%3D%22%23FFFAF5%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Instagram%20Frame%20--%3E%0A%20%20%3Crect%20x%3D%2230%22%20y%3D%2220%22%20width%3D%22140%22%20height%3D%22200%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Instagram%20Header%20--%3E%0A%20%20%3Crect%20x%3D%2230%22%20y%3D%2220%22%20width%3D%22140%22%20height%3D%2230%22%20rx%3D%2210%22%20fill%3D%22%23FAFAFA%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2255%22%20cy%3D%2235%22%20r%3D%2210%22%20fill%3D%22%23E1306C%22%20opacity%3D%220.8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2255%22%20y%3D%2239%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%93%B7%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%2239%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2210%22%20fill%3D%22%23444%22%3EInstagram%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Instagram%20Post%20--%3E%0A%20%20%3Crect%20x%3D%2240%22%20y%3D%2260%22%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.3%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22100%22%20cy%3D%22120%22%20r%3D%2230%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%22125%22%20font-family%3D%22Arial%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%A7%B6%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Instagram%20Caption%20--%3E%0A%20%20%3Ctext%20x%3D%2245%22%20y%3D%22195%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%228%22%20fill%3D%22%23444%22%3Ecreativecrafter%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2245%22%20y%3D%22210%22%20font-family%3D%22Arial%22%20font-size%3D%227%22%20fill%3D%22%23666%22%3EHandmade%20bag%20with%20macram%C3%A9%20details%21%20%E2%82%B91%2C299%20%23handmade%20%23craft%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Conversion%20Arrow%20--%3E%0A%20%20%3Cpath%20d%3D%22M180%2C120%20L220%2C120%22%20stroke%3D%22%23FF6847%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%3Cpolygon%20points%3D%22220%2C120%20215%2C115%20215%2C125%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Catalog%20Card%20--%3E%0A%20%20%3Crect%20x%3D%22230%22%20y%3D%2220%22%20width%3D%22140%22%20height%3D%22200%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Product%20Image%20--%3E%0A%20%20%3Crect%20x%3D%22240%22%20y%3D%2240%22%20width%3D%22120%22%20height%3D%22100%22%20rx%3D%225%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.3%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22300%22%20cy%3D%2290%22%20r%3D%2230%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%2295%22%20font-family%3D%22Arial%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%A7%B6%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Product%20Details%20--%3E%0A%20%20%3Ctext%20x%3D%22250%22%20y%3D%22160%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2212%22%20fill%3D%22%23444%22%3EHandmade%20Macram%C3%A9%20Bag%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22250%22%20y%3D%22180%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20font-weight%3D%22bold%22%20fill%3D%22%23FF6847%22%3E%E2%82%B91%2C299%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Rating%20--%3E%0A%20%20%3Ctext%20x%3D%22250%22%20y%3D%22195%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20fill%3D%22gold%22%3E%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Add%20to%20Cart%20Button%20--%3E%0A%20%20%3Crect%20x%3D%22250%22%20y%3D%22200%22%20width%3D%22100%22%20height%3D%2225%22%20rx%3D%2212.5%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22217%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EAdd%20to%20Cart%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20AI%20Icon%20--%3E%0A%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2280%22%20r%3D%2220%22%20fill%3D%22%2395DEFF%22%20opacity%3D%220.7%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22200%22%20y%3D%2285%22%20font-family%3D%22Arial%22%20font-size%3D%2215%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%A4%96%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Magic%20Sparkles%20--%3E%0A%20%20%3Cpath%20d%3D%22M185%2C60%20L188%2C65%20L193%2C62%20L190%2C67%20L195%2C70%20L190%2C73%20L193%2C78%20L188%2C75%20L185%2C80%20L182%2C75%20L177%2C78%20L180%2C73%20L175%2C70%20L180%2C67%20L177%2C62%20L182%2C65%20Z%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.8%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M210%2C60%20L213%2C65%20L218%2C62%20L215%2C67%20L220%2C70%20L215%2C73%20L218%2C78%20L213%2C75%20L210%2C80%20L207%2C75%20L202%2C78%20L205%2C73%20L200%2C70%20L205%2C67%20L202%2C62%20L207%2C65%20Z%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.8%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M185%2C100%20L188%2C105%20L193%2C102%20L190%2C107%20L195%2C110%20L190%2C113%20L193%2C118%20L188%2C115%20L185%2C120%20L182%2C115%20L177%2C118%20L180%2C113%20L175%2C110%20L180%2C107%20L177%2C102%20L182%2C105%20Z%22%20fill%3D%22%2395DEFF%22%20opacity%3D%220.8%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M210%2C100%20L213%2C105%20L218%2C102%20L215%2C107%20L220%2C110%20L215%2C113%20L218%2C118%20L213%2C115%20L210%2C120%20L207%2C115%20L202%2C118%20L205%2C113%20L200%2C110%20L205%2C107%20L202%2C102%20L207%2C105%20Z%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.8%22%20%2F%3E%0A%3C%2Fsvg%3E" class="feature-image" alt="Instagram to catalog conversion">
+                    <div class="feature-content">
+                        <div class="feature-icon icon-orange">📱</div>
+                        <h3 class="feature-title">Instagram to Storefront</h3>
+                        <p class="feature-description">Your Instagram posts automatically become a beautiful product catalog with prices and descriptions.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <object type="image/svg+xml" data="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%3E%0A%20%20%3C%21--%20Background%20--%3E%0A%20%20%3Crect%20width%3D%22400%22%20height%3D%22240%22%20fill%3D%22%23FFFAF5%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20WhatsApp%20Frame%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%2220%22%20width%3D%22300%22%20height%3D%22200%22%20rx%3D%2215%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20WhatsApp%20Header%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%2220%22%20width%3D%22300%22%20height%3D%2240%22%20rx%3D%2215%22%20fill%3D%22%2325D366%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2280%22%20cy%3D%2240%22%20r%3D%2212%22%20fill%3D%22white%22%20opacity%3D%220.9%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%2244%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%2325D366%22%3E%F0%9F%91%A9%E2%80%8D%F0%9F%8D%B3%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22110%22%20y%3D%2244%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2214%22%20fill%3D%22white%22%3EPriya%27s%20Cake%20Shop%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22320%22%20cy%3D%2240%22%20r%3D%2214%22%20fill%3D%22white%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22320%22%20y%3D%2245%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%E2%8B%AF%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Chat%20Background%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%2260%22%20width%3D%22300%22%20height%3D%22160%22%20fill%3D%22%23E5DDD5%22%20opacity%3D%220.3%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Customer%20Message%20--%3E%0A%20%20%3Cpath%20d%3D%22M80%2C80%20L200%2C80%20C210%2C80%20210%2C80%20210%2C90%20L210%2C105%20C210%2C115%20210%2C115%20200%2C115%20L80%2C115%20C70%2C115%2070%2C115%2070%2C105%20L70%2C90%20C70%2C80%2070%2C80%2080%2C80%20Z%22%20fill%3D%22white%22%20stroke%3D%22%23EEE%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%2295%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20fill%3D%22%23444%22%3EHi%21%20Do%20you%20have%20any%20celebration%20cakes%3F%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22180%22%20y%3D%22110%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23888%22%3E10%3A42%20AM%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Business%20Response%20-%20Product%20Card%20--%3E%0A%20%20%3Cpath%20d%3D%22M150%2C125%20L290%2C125%20C300%2C125%20300%2C125%20300%2C135%20L300%2C185%20C300%2C195%20300%2C195%20290%2C195%20L150%2C195%20C140%2C195%20140%2C195%20140%2C185%20L140%2C135%20C140%2C125%20140%2C125%20150%2C125%20Z%22%20fill%3D%22white%22%20stroke%3D%22%23EEE%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Product%20Image%20--%3E%0A%20%20%3Crect%20x%3D%22150%22%20y%3D%22135%22%20width%3D%2280%22%20height%3D%2250%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.4%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22190%22%20cy%3D%22160%22%20r%3D%2215%22%20fill%3D%22%23FFD166%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22190%22%20y%3D%22165%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%8D%B0%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Product%20Details%20--%3E%0A%20%20%3Ctext%20x%3D%22240%22%20y%3D%22145%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2210%22%20fill%3D%22%23444%22%3ECelebration%20Cake%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22240%22%20y%3D%22160%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20fill%3D%22%23666%22%3ERich%20chocolate%20cake%20with%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22240%22%20y%3D%22172%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20fill%3D%22%23666%22%3Ecustom%20decorations%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22240%22%20y%3D%22188%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%20fill%3D%22%23FF6847%22%3E%E2%82%B9899%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Order%20Button%20--%3E%0A%20%20%3Crect%20x%3D%22220%22%20y%3D%22195%22%20width%3D%2270%22%20height%3D%2220%22%20rx%3D%2210%22%20fill%3D%22%2325D366%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22255%22%20y%3D%22209%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EOrder%20Now%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Time%20--%3E%0A%20%20%3Ctext%20x%3D%22280%22%20y%3D%22220%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23888%22%3E10%3A45%20AM%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20WhatsApp%20Bottom%20Bar%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%22180%22%20width%3D%22300%22%20height%3D%2240%22%20fill%3D%22%23FAFAFA%22%20%2F%3E%0A%20%20%3Crect%20x%3D%2270%22%20y%3D%22190%22%20width%3D%22220%22%20height%3D%2220%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2290%22%20y%3D%22204%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20fill%3D%22%23888%22%3EType%20a%20message...%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22320%22%20cy%3D%22200%22%20r%3D%2215%22%20fill%3D%22%2325D366%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22320%22%20y%3D%22205%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%E2%9E%A4%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20WhatsApp%20Logo%20at%20Bottom%20--%3E%0A%20%20%3Cpath%20d%3D%22M15%2C200%20C15%2C180%2035%2C180%2035%2C200%20C35%2C220%2015%2C220%2015%2C200%20Z%22%20fill%3D%22%2325D366%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2225%22%20y%3D%22205%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EW%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Payment%20Link%20Floating%20--%3E%0A%20%20%3Crect%20x%3D%22250%22%20y%3D%2295%22%20width%3D%22100%22%20height%3D%2225%22%20rx%3D%225%22%20fill%3D%22%2325D366%22%20opacity%3D%220.9%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22111%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EPay%20Now%20%E2%82%B9899%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Arrow%20Indicator%20--%3E%0A%20%20%3Cpath%20d%3D%22M255%2C85%20L295%2C85%20L275%2C95%20Z%22%20fill%3D%22%2325D366%22%20%2F%3E%0A%3C%2Fsvg%3E" class="feature-image" alt="WhatsApp order management">
+                    <div class="feature-content">
+                        <div class="feature-icon icon-blue">💬</div>
+                        <h3 class="feature-title">WhatsApp Commerce</h3>
+                        <p class="feature-description">Take orders, share products, and collect payments - all through your regular WhatsApp.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <object type="image/svg+xml" data="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%3E%0A%20%20%3C%21--%20Background%20--%3E%0A%20%20%3Crect%20width%3D%22400%22%20height%3D%22240%22%20fill%3D%22%23FFFAF5%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Dashboard%20Frame%20--%3E%0A%20%20%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%22360%22%20height%3D%22200%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Header%20--%3E%0A%20%20%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%22360%22%20height%3D%2240%22%20rx%3D%2210%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2240%22%20y%3D%2245%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2216%22%20fill%3D%22%232D2D2D%22%3EBusiness%20Intelligence%20Dashboard%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22350%22%20cy%3D%2240%22%20r%3D%2215%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.1%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22350%22%20y%3D%2245%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23FF6847%22%3E%F0%9F%91%A4%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Main%20Stats%20Area%20--%3E%0A%20%20%3Crect%20x%3D%2230%22%20y%3D%2270%22%20width%3D%22100%22%20height%3D%2260%22%20rx%3D%225%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.1%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%2290%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20text-anchor%3D%22middle%22%20fill%3D%22%23555%22%3ETotal%20Orders%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%22115%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2224%22%20text-anchor%3D%22middle%22%20fill%3D%22%23FF6847%22%3E127%3C%2Ftext%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22140%22%20y%3D%2270%22%20width%3D%22100%22%20height%3D%2260%22%20rx%3D%225%22%20fill%3D%22%2395DEFF%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22190%22%20y%3D%2290%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20text-anchor%3D%22middle%22%20fill%3D%22%23555%22%3ERevenue%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22190%22%20y%3D%22115%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%20fill%3D%22%232AABDE%22%3E%E2%82%B956%2C230%3C%2Ftext%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22250%22%20y%3D%2270%22%20width%3D%22100%22%20height%3D%2260%22%20rx%3D%225%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%2290%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20text-anchor%3D%22middle%22%20fill%3D%22%23555%22%3ETop%20Product%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22115%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23E8AB00%22%3ECelebration%20Cake%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Sales%20Chart%20--%3E%0A%20%20%3Crect%20x%3D%2230%22%20y%3D%22140%22%20width%3D%22210%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2240%22%20y%3D%22155%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2210%22%20fill%3D%22%23555%22%3ESales%20Trend%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Chart%20Lines%20--%3E%0A%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22190%22%20x2%3D%22230%22%20y2%3D%22190%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22170%22%20x2%3D%22230%22%20y2%3D%22170%22%20stroke%3D%22%23DDD%22%20stroke-dasharray%3D%222%2C2%22%20%2F%3E%0A%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22150%22%20x2%3D%22230%22%20y2%3D%22150%22%20stroke%3D%22%23DDD%22%20stroke-dasharray%3D%222%2C2%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Sales%20Line%20--%3E%0A%20%20%3Cpolyline%20points%3D%2240%2C180%2070%2C175%20100%2C160%20130%2C165%20160%2C155%20190%2C145%20220%2C150%22%20%0A%20%20%20%20%20%20%20%20%20%20fill%3D%22none%22%20stroke%3D%22%23FF6847%22%20stroke-width%3D%223%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Data%20Points%20--%3E%0A%20%20%3Ccircle%20cx%3D%2240%22%20cy%3D%22180%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2270%22%20cy%3D%22175%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22100%22%20cy%3D%22160%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22130%22%20cy%3D%22165%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22160%22%20cy%3D%22155%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22190%22%20cy%3D%22145%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22220%22%20cy%3D%22150%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Best%20Sellers%20--%3E%0A%20%20%3Crect%20x%3D%22250%22%20y%3D%22140%22%20width%3D%22100%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22260%22%20y%3D%22155%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2210%22%20fill%3D%22%23555%22%3EBest%20Sellers%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Bar%20Chart%20--%3E%0A%20%20%3Crect%20x%3D%22260%22%20y%3D%22165%22%20width%3D%2260%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22325%22%20y%3D%22170%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E60%25%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22255%22%20y%3D%22170%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E%F0%9F%8D%B0%3C%2Ftext%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22260%22%20y%3D%22180%22%20width%3D%2240%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%2395DEFF%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22305%22%20y%3D%22185%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E40%25%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22255%22%20y%3D%22185%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E%F0%9F%A7%B6%3C%2Ftext%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22260%22%20y%3D%22195%22%20width%3D%2230%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%23FFD166%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22295%22%20y%3D%22200%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E30%25%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22255%22%20y%3D%22200%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E%F0%9F%8E%81%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Insights%20Notification%20--%3E%0A%20%20%3Crect%20x%3D%2230%22%20y%3D%22180%22%20width%3D%22210%22%20height%3D%2230%22%20rx%3D%2215%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2250%22%20y%3D%22200%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20fill%3D%22%23E8AB00%22%3E%F0%9F%93%88%20Insight%3A%20Your%20sales%20are%20up%2023%25%20from%20last%20month%21%3C%2Ftext%3E%0A%3C%2Fsvg%3E" class="feature-image" alt="Business analytics">
+                    <div class="feature-content">
+                        <div class="feature-icon icon-yellow">📊</div>
+                        <h3 class="feature-title">Growth Intelligence</h3>
+                        <p class="feature-description">Know exactly what's selling best, when to restock, and how to price for maximum profit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-intro">
+                <h2 class="section-title">From <span>social posts</span> to sales in minutes</h2>
+                <p class="section-description">A simple 3-step process designed for busy creative entrepreneurs</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-connector"></div>
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Connect your Instagram</h3>
+                        <p class="step-description">Link your Instagram account and we'll automatically transform your posts into a professional product catalog.</p>
+                        <object type="image/svg+xml" data="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20320%22%3E%0A%20%20%3C%21--%20Background%20--%3E%0A%20%20%3Crect%20width%3D%22600%22%20height%3D%22320%22%20fill%3D%22%23FFFAF5%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Step%201%20--%3E%0A%20%20%3Ccircle%20cx%3D%22125%22%20cy%3D%2270%22%20r%3D%2230%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22125%22%20y%3D%2278%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2224%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E1%3C%2Ftext%3E%0A%20%20%0A%20%20%3Crect%20x%3D%2275%22%20y%3D%22120%22%20width%3D%22100%22%20height%3D%22150%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Step%201%20Content%20-%20Connect%20Instagram%20--%3E%0A%20%20%3Crect%20x%3D%2285%22%20y%3D%22130%22%20width%3D%2280%22%20height%3D%2280%22%20rx%3D%225%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22125%22%20cy%3D%22170%22%20r%3D%2220%22%20fill%3D%22%23E1306C%22%20opacity%3D%220.8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22125%22%20y%3D%22175%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%93%B7%3C%2Ftext%3E%0A%20%20%0A%20%20%3Ctext%20x%3D%22125%22%20y%3D%22230%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23444%22%3EConnect%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22125%22%20y%3D%22250%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%23666%22%3ELink%20Your%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22125%22%20y%3D%22265%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%23666%22%3EInstagram%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Arrow%201--%3E%0A%20%20%3Cpath%20d%3D%22M180%2C170%20L200%2C170%22%20stroke%3D%22%23DDD%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%3Cpolygon%20points%3D%22200%2C170%20195%2C165%20195%2C175%22%20fill%3D%22%23DDD%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Step%202%20--%3E%0A%20%20%3Ccircle%20cx%3D%22300%22%20cy%3D%2270%22%20r%3D%2230%22%20fill%3D%22%2395DEFF%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%2278%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2224%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E2%3C%2Ftext%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22250%22%20y%3D%22120%22%20width%3D%22100%22%20height%3D%22150%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Step%202%20Content%20-%20Share%20Products%20--%3E%0A%20%20%3Crect%20x%3D%22260%22%20y%3D%22130%22%20width%3D%2280%22%20height%3D%2280%22%20rx%3D%225%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20WhatsApp%20Icon%20--%3E%0A%20%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22160%22%20r%3D%2215%22%20fill%3D%22%2325D366%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M293%2C167%20C293%2C167%20295%2C173%20303%2C168%20C311%2C163%20316%2C155%20307%2C149%20C298%2C143%20290%2C148%20290%2C155%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22295%22%20cy%3D%22159%22%20r%3D%221%22%20fill%3D%22white%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22159%22%20r%3D%221%22%20fill%3D%22white%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22305%22%20cy%3D%22159%22%20r%3D%221%22%20fill%3D%22white%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Product%20Card%20--%3E%0A%20%20%3Crect%20x%3D%22275%22%20y%3D%22175%22%20width%3D%2240%22%20height%3D%2230%22%20rx%3D%223%22%20fill%3D%22white%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Crect%20x%3D%22275%22%20y%3D%22175%22%20width%3D%2240%22%20height%3D%2220%22%20rx%3D%223%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.3%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22295%22%20y%3D%22190%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20text-anchor%3D%22middle%22%20fill%3D%22%23666%22%3E%F0%9F%9B%8D%EF%B8%8F%3C%2Ftext%3E%0A%20%20%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22230%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23444%22%3EShare%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22250%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%23666%22%3EProducts%20on%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22265%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%23666%22%3EWhatsApp%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Arrow%202--%3E%0A%20%20%3Cpath%20d%3D%22M355%2C170%20L375%2C170%22%20stroke%3D%22%23DDD%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%3Cpolygon%20points%3D%22375%2C170%20370%2C165%20370%2C175%22%20fill%3D%22%23DDD%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Step%203%20--%3E%0A%20%20%3Ccircle%20cx%3D%22475%22%20cy%3D%2270%22%20r%3D%2230%22%20fill%3D%22%23FFD166%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22475%22%20y%3D%2278%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2224%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E3%3C%2Ftext%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22425%22%20y%3D%22120%22%20width%3D%22100%22%20height%3D%22150%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Step%203%20Content%20-%20Growth%20Intelligence%20--%3E%0A%20%20%3Crect%20x%3D%22435%22%20y%3D%22130%22%20width%3D%2280%22%20height%3D%2280%22%20rx%3D%225%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Chart%20Elements%20--%3E%0A%20%20%3Cline%20x1%3D%22445%22%20y1%3D%22190%22%20x2%3D%22505%22%20y2%3D%22190%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Cline%20x1%3D%22445%22%20y1%3D%22170%22%20x2%3D%22505%22%20y2%3D%22170%22%20stroke%3D%22%23DDD%22%20stroke-dasharray%3D%222%2C2%22%20%2F%3E%0A%20%20%3Cline%20x1%3D%22445%22%20y1%3D%22150%22%20x2%3D%22505%22%20y2%3D%22150%22%20stroke%3D%22%23DDD%22%20stroke-dasharray%3D%222%2C2%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Chart%20Line%20--%3E%0A%20%20%3Cpolyline%20points%3D%22445%2C180%20455%2C175%20465%2C165%20475%2C170%20485%2C155%20495%2C145%20505%2C150%22%20%0A%20%20%20%20%20%20%20%20%20%20fill%3D%22none%22%20stroke%3D%22%23E8AB00%22%20stroke-width%3D%223%22%20%2F%3E%0A%20%20%0A%20%20%3Ctext%20x%3D%22475%22%20y%3D%22230%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23444%22%3EGrow%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22475%22%20y%3D%22250%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%23666%22%3EWith%20Smart%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22475%22%20y%3D%22265%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%23666%22%3EInsights%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Connecting%20Line%20--%3E%0A%20%20%3Cpath%20d%3D%22M125%2C30%20L475%2C30%22%20stroke%3D%22%23DDD%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M125%2C30%20L125%2C40%22%20stroke%3D%22%23DDD%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M300%2C30%20L300%2C40%22%20stroke%3D%22%23DDD%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M475%2C30%20L475%2C40%22%20stroke%3D%22%23DDD%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Process%20Title%20--%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%2220%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22%23FF6847%22%3EFrom%20Social%20Posts%20to%20Sales%20in%20Minutes%3C%2Ftext%3E%0A%3C%2Fsvg%3E" class="step-image" alt="Instagram connection interface">
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Share products on WhatsApp</h3>
+                        <p class="step-description">Send beautiful product cards with pricing directly to customers through WhatsApp, with payment links included.</p>
+                        <object type="image/svg+xml" data="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%3E%0A%20%20%3C%21--%20Background%20--%3E%0A%20%20%3Crect%20width%3D%22400%22%20height%3D%22240%22%20fill%3D%22%23FFFAF5%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20WhatsApp%20Frame%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%2220%22%20width%3D%22300%22%20height%3D%22200%22%20rx%3D%2215%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20WhatsApp%20Header%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%2220%22%20width%3D%22300%22%20height%3D%2240%22%20rx%3D%2215%22%20fill%3D%22%2325D366%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2280%22%20cy%3D%2240%22%20r%3D%2212%22%20fill%3D%22white%22%20opacity%3D%220.9%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%2244%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%2325D366%22%3E%F0%9F%91%A9%E2%80%8D%F0%9F%8D%B3%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22110%22%20y%3D%2244%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2214%22%20fill%3D%22white%22%3EPriya%27s%20Cake%20Shop%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22320%22%20cy%3D%2240%22%20r%3D%2214%22%20fill%3D%22white%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22320%22%20y%3D%2245%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%E2%8B%AF%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Chat%20Background%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%2260%22%20width%3D%22300%22%20height%3D%22160%22%20fill%3D%22%23E5DDD5%22%20opacity%3D%220.3%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Customer%20Message%20--%3E%0A%20%20%3Cpath%20d%3D%22M80%2C80%20L200%2C80%20C210%2C80%20210%2C80%20210%2C90%20L210%2C105%20C210%2C115%20210%2C115%20200%2C115%20L80%2C115%20C70%2C115%2070%2C115%2070%2C105%20L70%2C90%20C70%2C80%2070%2C80%2080%2C80%20Z%22%20fill%3D%22white%22%20stroke%3D%22%23EEE%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%2295%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20fill%3D%22%23444%22%3EHi%21%20Do%20you%20have%20any%20celebration%20cakes%3F%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22180%22%20y%3D%22110%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23888%22%3E10%3A42%20AM%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Business%20Response%20-%20Product%20Card%20--%3E%0A%20%20%3Cpath%20d%3D%22M150%2C125%20L290%2C125%20C300%2C125%20300%2C125%20300%2C135%20L300%2C185%20C300%2C195%20300%2C195%20290%2C195%20L150%2C195%20C140%2C195%20140%2C195%20140%2C185%20L140%2C135%20C140%2C125%20140%2C125%20150%2C125%20Z%22%20fill%3D%22white%22%20stroke%3D%22%23EEE%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Product%20Image%20--%3E%0A%20%20%3Crect%20x%3D%22150%22%20y%3D%22135%22%20width%3D%2280%22%20height%3D%2250%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.4%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22190%22%20cy%3D%22160%22%20r%3D%2215%22%20fill%3D%22%23FFD166%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22190%22%20y%3D%22165%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%8D%B0%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Product%20Details%20--%3E%0A%20%20%3Ctext%20x%3D%22240%22%20y%3D%22145%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2210%22%20fill%3D%22%23444%22%3ECelebration%20Cake%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22240%22%20y%3D%22160%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20fill%3D%22%23666%22%3ERich%20chocolate%20cake%20with%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22240%22%20y%3D%22172%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20fill%3D%22%23666%22%3Ecustom%20decorations%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22240%22%20y%3D%22188%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%20fill%3D%22%23FF6847%22%3E%E2%82%B9899%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Order%20Button%20--%3E%0A%20%20%3Crect%20x%3D%22220%22%20y%3D%22195%22%20width%3D%2270%22%20height%3D%2220%22%20rx%3D%2210%22%20fill%3D%22%2325D366%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22255%22%20y%3D%22209%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EOrder%20Now%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Time%20--%3E%0A%20%20%3Ctext%20x%3D%22280%22%20y%3D%22220%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23888%22%3E10%3A45%20AM%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20WhatsApp%20Bottom%20Bar%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%22180%22%20width%3D%22300%22%20height%3D%2240%22%20fill%3D%22%23FAFAFA%22%20%2F%3E%0A%20%20%3Crect%20x%3D%2270%22%20y%3D%22190%22%20width%3D%22220%22%20height%3D%2220%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2290%22%20y%3D%22204%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20fill%3D%22%23888%22%3EType%20a%20message...%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22320%22%20cy%3D%22200%22%20r%3D%2215%22%20fill%3D%22%2325D366%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22320%22%20y%3D%22205%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%E2%9E%A4%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20WhatsApp%20Logo%20at%20Bottom%20--%3E%0A%20%20%3Cpath%20d%3D%22M15%2C200%20C15%2C180%2035%2C180%2035%2C200%20C35%2C220%2015%2C220%2015%2C200%20Z%22%20fill%3D%22%2325D366%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2225%22%20y%3D%22205%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EW%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Payment%20Link%20Floating%20--%3E%0A%20%20%3Crect%20x%3D%22250%22%20y%3D%2295%22%20width%3D%22100%22%20height%3D%2225%22%20rx%3D%225%22%20fill%3D%22%2325D366%22%20opacity%3D%220.9%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22111%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EPay%20Now%20%E2%82%B9899%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Arrow%20Indicator%20--%3E%0A%20%20%3Cpath%20d%3D%22M255%2C85%20L295%2C85%20L275%2C95%20Z%22%20fill%3D%22%2325D366%22%20%2F%3E%0A%3C%2Fsvg%3E" class="step-image" alt="WhatsApp product sharing interface">
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Grow with smart insights</h3>
+                        <p class="step-description">See what's selling best, get suggested prices, and know exactly when to restock popular items.</p>
+                        <object type="image/svg+xml" data="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%3E%0A%20%20%3C%21--%20Background%20--%3E%0A%20%20%3Crect%20width%3D%22400%22%20height%3D%22240%22%20fill%3D%22%23FFFAF5%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Dashboard%20Frame%20--%3E%0A%20%20%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%22360%22%20height%3D%22200%22%20rx%3D%2210%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Header%20--%3E%0A%20%20%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%22360%22%20height%3D%2240%22%20rx%3D%2210%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2240%22%20y%3D%2245%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2216%22%20fill%3D%22%232D2D2D%22%3EBusiness%20Intelligence%20Dashboard%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22350%22%20cy%3D%2240%22%20r%3D%2215%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.1%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22350%22%20y%3D%2245%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23FF6847%22%3E%F0%9F%91%A4%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Main%20Stats%20Area%20--%3E%0A%20%20%3Crect%20x%3D%2230%22%20y%3D%2270%22%20width%3D%22100%22%20height%3D%2260%22%20rx%3D%225%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.1%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%2290%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20text-anchor%3D%22middle%22%20fill%3D%22%23555%22%3ETotal%20Orders%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%22115%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2224%22%20text-anchor%3D%22middle%22%20fill%3D%22%23FF6847%22%3E127%3C%2Ftext%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22140%22%20y%3D%2270%22%20width%3D%22100%22%20height%3D%2260%22%20rx%3D%225%22%20fill%3D%22%2395DEFF%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22190%22%20y%3D%2290%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20text-anchor%3D%22middle%22%20fill%3D%22%23555%22%3ERevenue%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22190%22%20y%3D%22115%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%20fill%3D%22%232AABDE%22%3E%E2%82%B956%2C230%3C%2Ftext%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22250%22%20y%3D%2270%22%20width%3D%22100%22%20height%3D%2260%22%20rx%3D%225%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%2290%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20text-anchor%3D%22middle%22%20fill%3D%22%23555%22%3ETop%20Product%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22115%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23E8AB00%22%3ECelebration%20Cake%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Sales%20Chart%20--%3E%0A%20%20%3Crect%20x%3D%2230%22%20y%3D%22140%22%20width%3D%22210%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2240%22%20y%3D%22155%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2210%22%20fill%3D%22%23555%22%3ESales%20Trend%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Chart%20Lines%20--%3E%0A%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22190%22%20x2%3D%22230%22%20y2%3D%22190%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22170%22%20x2%3D%22230%22%20y2%3D%22170%22%20stroke%3D%22%23DDD%22%20stroke-dasharray%3D%222%2C2%22%20%2F%3E%0A%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22150%22%20x2%3D%22230%22%20y2%3D%22150%22%20stroke%3D%22%23DDD%22%20stroke-dasharray%3D%222%2C2%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Sales%20Line%20--%3E%0A%20%20%3Cpolyline%20points%3D%2240%2C180%2070%2C175%20100%2C160%20130%2C165%20160%2C155%20190%2C145%20220%2C150%22%20%0A%20%20%20%20%20%20%20%20%20%20fill%3D%22none%22%20stroke%3D%22%23FF6847%22%20stroke-width%3D%223%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Data%20Points%20--%3E%0A%20%20%3Ccircle%20cx%3D%2240%22%20cy%3D%22180%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2270%22%20cy%3D%22175%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22100%22%20cy%3D%22160%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22130%22%20cy%3D%22165%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22160%22%20cy%3D%22155%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22190%22%20cy%3D%22145%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22220%22%20cy%3D%22150%22%20r%3D%223%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Best%20Sellers%20--%3E%0A%20%20%3Crect%20x%3D%22250%22%20y%3D%22140%22%20width%3D%22100%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22260%22%20y%3D%22155%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2210%22%20fill%3D%22%23555%22%3EBest%20Sellers%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Bar%20Chart%20--%3E%0A%20%20%3Crect%20x%3D%22260%22%20y%3D%22165%22%20width%3D%2260%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22325%22%20y%3D%22170%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E60%25%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22255%22%20y%3D%22170%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E%F0%9F%8D%B0%3C%2Ftext%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22260%22%20y%3D%22180%22%20width%3D%2240%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%2395DEFF%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22305%22%20y%3D%22185%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E40%25%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22255%22%20y%3D%22185%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E%F0%9F%A7%B6%3C%2Ftext%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22260%22%20y%3D%22195%22%20width%3D%2230%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%23FFD166%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22295%22%20y%3D%22200%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E30%25%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22255%22%20y%3D%22200%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3E%F0%9F%8E%81%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Insights%20Notification%20--%3E%0A%20%20%3Crect%20x%3D%2230%22%20y%3D%22180%22%20width%3D%22210%22%20height%3D%2230%22%20rx%3D%2215%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2250%22%20y%3D%22200%22%20font-family%3D%22Arial%22%20font-size%3D%2210%22%20fill%3D%22%23E8AB00%22%3E%F0%9F%93%88%20Insight%3A%20Your%20sales%20are%20up%2023%25%20from%20last%20month%21%3C%2Ftext%3E%0A%3C%2Fsvg%3E" class="step-image" alt="Business analytics dashboard">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCCG Framework -->
+    <section class="sccg-framework">
+        <div class="container">
+            <div class="framework-container">
+                <div class="framework-content">
+                    <h2 class="framework-title">The <span>SCCG</span> Framework</h2>
+                    <p class="framework-description">Our Simplified Customer Commerce Growth approach helps small businesses stay small but grow sustainably</p>
+                    <ul class="framework-list">
+                        <li class="framework-item">
+                            <div class="framework-item-icon icon-orange">S</div>
+                            <div class="framework-item-content">
+                                <h3>Simplified</h3>
+                                <p>Zero technical setup. No coding. No complicated tools. Just connect your Instagram and start selling.</p>
+                            </div>
+                        </li>
+                        <li class="framework-item">
+                            <div class="framework-item-icon icon-blue">C</div>
+                            <div class="framework-item-content">
+                                <h3>Customer-Focused</h3>
+                                <p>Shopping experiences that feel natural and personal through channels your customers already love.</p>
+                            </div>
+                        </li>
+                        <li class="framework-item">
+                            <div class="framework-item-icon icon-yellow">G</div>
+                            <div class="framework-item-content">
+                                <h3>Growth Intelligence</h3>
+                                <p>Smart insights that tell you exactly what products to promote, when to restock, and how to price for profit.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="framework-image">
+                    <object type="image/svg+xml" data="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20600%22%3E%0A%20%20%3C%21--%20Background%20--%3E%0A%20%20%3Crect%20width%3D%22500%22%20height%3D%22600%22%20fill%3D%22%23FFFAF5%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Dashboard%20Frame%20--%3E%0A%20%20%3Crect%20x%3D%2225%22%20y%3D%2225%22%20width%3D%22450%22%20height%3D%22550%22%20rx%3D%2220%22%20fill%3D%22white%22%20stroke%3D%22%23EEEEEE%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Header%20--%3E%0A%20%20%3Crect%20x%3D%2225%22%20y%3D%2225%22%20width%3D%22450%22%20height%3D%2260%22%20rx%3D%2220%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2255%22%20r%3D%2220%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2260%22%20y%3D%2260%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23FF6847%22%3EIN%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2295%22%20y%3D%2260%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2218%22%20fill%3D%22%232D2D2D%22%3EIn-House%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22200%22%20y%3D%2260%22%20font-family%3D%22Arial%22%20font-size%3D%2216%22%20fill%3D%22%23888%22%3ESCCG%20Framework%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22435%22%20cy%3D%2255%22%20r%3D%2218%22%20fill%3D%22%23F8F8F8%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22435%22%20y%3D%2260%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%232D2D2D%22%3E%F0%9F%91%A4%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20S%20-%20Simplified%20Section%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%22110%22%20width%3D%22400%22%20height%3D%22120%22%20rx%3D%2210%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.1%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2280%22%20cy%3D%22140%22%20r%3D%2220%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%22145%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3ES%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22120%22%20y%3D%22140%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2218%22%20fill%3D%22%23FF6847%22%3ESimplified%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22120%22%20y%3D%22160%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20fill%3D%22%23666%22%3EInstagram-to-Catalog%20Conversion%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Instagram%20Post%20Preview%20--%3E%0A%20%20%3Crect%20x%3D%22120%22%20y%3D%22175%22%20width%3D%2260%22%20height%3D%2240%22%20rx%3D%225%22%20fill%3D%22white%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Crect%20x%3D%22120%22%20y%3D%22175%22%20width%3D%2260%22%20height%3D%2230%22%20rx%3D%225%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.3%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22150%22%20y%3D%22195%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23888%22%3E%F0%9F%93%B7%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22150%22%20y%3D%22210%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20text-anchor%3D%22middle%22%20fill%3D%22%23888%22%3EPost%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Arrow%20--%3E%0A%20%20%3Cpath%20d%3D%22M190%2C195%20L230%2C195%22%20stroke%3D%22%23FF6847%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%3Cpolygon%20points%3D%22230%2C195%20225%2C190%20225%2C200%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20AI%20Processing%20--%3E%0A%20%20%3Ccircle%20cx%3D%22250%22%20cy%3D%22195%22%20r%3D%2215%22%20fill%3D%22%2395DEFF%22%20opacity%3D%220.7%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22250%22%20y%3D%22200%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3E%F0%9F%A4%96%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Arrow%20--%3E%0A%20%20%3Cpath%20d%3D%22M270%2C195%20L310%2C195%22%20stroke%3D%22%23FF6847%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%3Cpolygon%20points%3D%22310%2C195%20305%2C190%20305%2C200%22%20fill%3D%22%23FF6847%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Product%20Card%20--%3E%0A%20%20%3Crect%20x%3D%22320%22%20y%3D%22175%22%20width%3D%2260%22%20height%3D%2240%22%20rx%3D%225%22%20fill%3D%22white%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Crect%20x%3D%22320%22%20y%3D%22175%22%20width%3D%2260%22%20height%3D%2230%22%20rx%3D%225%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22350%22%20y%3D%22195%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23888%22%3E%F0%9F%9B%8D%EF%B8%8F%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22350%22%20y%3D%22210%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20text-anchor%3D%22middle%22%20fill%3D%22%23888%22%3EProduct%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20C%20-%20Customer-Focused%20Section%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%22250%22%20width%3D%22400%22%20height%3D%22120%22%20rx%3D%2210%22%20fill%3D%22%2395DEFF%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2280%22%20cy%3D%22280%22%20r%3D%2220%22%20fill%3D%22%232AABDE%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%22285%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EC%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22120%22%20y%3D%22280%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2218%22%20fill%3D%22%232AABDE%22%3ECustomer-Focused%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22120%22%20y%3D%22300%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20fill%3D%22%23666%22%3EWhatsApp%20Shopping%20Experience%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20WhatsApp%20Chat%20--%3E%0A%20%20%3Crect%20x%3D%22120%22%20y%3D%22315%22%20width%3D%2260%22%20height%3D%2240%22%20rx%3D%225%22%20fill%3D%22%2325D366%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22150%22%20y%3D%22340%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%2325D366%22%3E%F0%9F%92%AC%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Product%20Card%20--%3E%0A%20%20%3Crect%20x%3D%22190%22%20y%3D%22315%22%20width%3D%2260%22%20height%3D%2240%22%20rx%3D%225%22%20fill%3D%22white%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Crect%20x%3D%22190%22%20y%3D%22315%22%20width%3D%2260%22%20height%3D%2230%22%20rx%3D%225%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.3%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22220%22%20y%3D%22335%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23888%22%3E%F0%9F%9B%8D%EF%B8%8F%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Payment%20--%3E%0A%20%20%3Crect%20x%3D%22260%22%20y%3D%22315%22%20width%3D%2260%22%20height%3D%2240%22%20rx%3D%225%22%20fill%3D%22%2325D366%22%20opacity%3D%220.4%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22290%22%20y%3D%22340%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%2325D366%22%3E%F0%9F%92%B3%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Delivery%20--%3E%0A%20%20%3Crect%20x%3D%22330%22%20y%3D%22315%22%20width%3D%2260%22%20height%3D%2240%22%20rx%3D%225%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22360%22%20y%3D%22340%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23FF6847%22%3E%F0%9F%93%A6%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20G%20-%20Growth%20Intelligence%20Section%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%22390%22%20width%3D%22400%22%20height%3D%22160%22%20rx%3D%2210%22%20fill%3D%22%23FFD166%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2280%22%20cy%3D%22420%22%20r%3D%2220%22%20fill%3D%22%23E8AB00%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2280%22%20y%3D%22425%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EG%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22120%22%20y%3D%22420%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2218%22%20fill%3D%22%23E8AB00%22%3EGrowth%20Intelligence%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22120%22%20y%3D%22440%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20fill%3D%22%23666%22%3ESmart%20Business%20Insights%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Sales%20Chart%20--%3E%0A%20%20%3Crect%20x%3D%2280%22%20y%3D%22460%22%20width%3D%22160%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22white%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%2295%22%20y%3D%22475%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2210%22%20fill%3D%22%23555%22%3ESales%20Growth%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Chart%20Lines%20--%3E%0A%20%20%3Cline%20x1%3D%2290%22%20y1%3D%22510%22%20x2%3D%22230%22%20y2%3D%22510%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Cline%20x1%3D%2290%22%20y1%3D%22495%22%20x2%3D%22230%22%20y2%3D%22495%22%20stroke%3D%22%23DDD%22%20stroke-dasharray%3D%222%2C2%22%20%2F%3E%0A%20%20%3Cline%20x1%3D%2290%22%20y1%3D%22480%22%20x2%3D%22230%22%20y2%3D%22480%22%20stroke%3D%22%23DDD%22%20stroke-dasharray%3D%222%2C2%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Sales%20Line%20--%3E%0A%20%20%3Cpolyline%20points%3D%2290%2C505%20110%2C500%20130%2C490%20150%2C495%20170%2C485%20190%2C475%20210%2C480%22%20%0A%20%20%20%20%20%20%20%20%20%20fill%3D%22none%22%20stroke%3D%22%23E8AB00%22%20stroke-width%3D%223%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Data%20Points%20--%3E%0A%20%20%3Ccircle%20cx%3D%2290%22%20cy%3D%22505%22%20r%3D%223%22%20fill%3D%22%23E8AB00%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22110%22%20cy%3D%22500%22%20r%3D%223%22%20fill%3D%22%23E8AB00%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22130%22%20cy%3D%22490%22%20r%3D%223%22%20fill%3D%22%23E8AB00%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22150%22%20cy%3D%22495%22%20r%3D%223%22%20fill%3D%22%23E8AB00%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22170%22%20cy%3D%22485%22%20r%3D%223%22%20fill%3D%22%23E8AB00%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22190%22%20cy%3D%22475%22%20r%3D%223%22%20fill%3D%22%23E8AB00%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%22210%22%20cy%3D%22480%22%20r%3D%223%22%20fill%3D%22%23E8AB00%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Insights%20Panel%20--%3E%0A%20%20%3Crect%20x%3D%22260%22%20y%3D%22460%22%20width%3D%22130%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22white%22%20stroke%3D%22%23DDD%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22275%22%20y%3D%22475%22%20font-family%3D%22Arial%22%20font-weight%3D%22bold%22%20font-size%3D%2210%22%20fill%3D%22%23555%22%3ESmart%20Insights%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Insights%20List%20--%3E%0A%20%20%3Cline%20x1%3D%22270%22%20y1%3D%22485%22%20x2%3D%22275%22%20y2%3D%22485%22%20stroke%3D%22%23FF6847%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22280%22%20y%3D%22488%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3ERestock%20Macram%C3%A9%20Bags%3C%2Ftext%3E%0A%20%20%0A%20%20%3Cline%20x1%3D%22270%22%20y1%3D%22500%22%20x2%3D%22275%22%20y2%3D%22500%22%20stroke%3D%22%232AABDE%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22280%22%20y%3D%22503%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3ERaise%20Cake%20prices%20by%2010%25%3C%2Ftext%3E%0A%20%20%0A%20%20%3Cline%20x1%3D%22270%22%20y1%3D%22515%22%20x2%3D%22275%22%20y2%3D%22515%22%20stroke%3D%22%23E8AB00%22%20stroke-width%3D%222%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22280%22%20y%3D%22518%22%20font-family%3D%22Arial%22%20font-size%3D%228%22%20fill%3D%22%23555%22%3EWeekend%20sales%20promotion%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%21--%20Bottom%20Navigation%20--%3E%0A%20%20%3Crect%20x%3D%2225%22%20y%3D%22525%22%20width%3D%22450%22%20height%3D%2250%22%20rx%3D%2210%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%0A%20%20%3C%21--%20Nav%20Items%20--%3E%0A%20%20%3Ccircle%20cx%3D%22100%22%20cy%3D%22550%22%20r%3D%2215%22%20fill%3D%22%23FF6847%22%20opacity%3D%220.2%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%22555%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%23FF6847%22%3E%F0%9F%8F%A0%3C%2Ftext%3E%0A%20%20%0A%20%20%3Ccircle%20cx%3D%22175%22%20cy%3D%22550%22%20r%3D%2215%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22175%22%20y%3D%22555%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%23888%22%3E%F0%9F%9B%8D%EF%B8%8F%3C%2Ftext%3E%0A%20%20%0A%20%20%3Ccircle%20cx%3D%22250%22%20cy%3D%22550%22%20r%3D%2215%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22250%22%20y%3D%22555%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%23888%22%3E%F0%9F%93%8A%3C%2Ftext%3E%0A%20%20%0A%20%20%3Ccircle%20cx%3D%22325%22%20cy%3D%22550%22%20r%3D%2215%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22325%22%20y%3D%22555%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%23888%22%3E%F0%9F%92%AC%3C%2Ftext%3E%0A%20%20%0A%20%20%3Ccircle%20cx%3D%22400%22%20cy%3D%22550%22%20r%3D%2215%22%20fill%3D%22%23F8F8F8%22%20%2F%3E%0A%20%20%3Ctext%20x%3D%22400%22%20y%3D%22555%22%20font-family%3D%22Arial%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20fill%3D%22%23888%22%3E%E2%9A%99%EF%B8%8F%3C%2Ftext%3E%0A%3C%2Fsvg%3E" class="framework-mockup" alt="SCCG Framework Dashboard">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="hero-shapes testimonials-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="container">
+            <div class="section-intro">
+                <h2 class="section-title">Loved by creative <span>entrepreneurs</span></h2>
+                <p class="section-description">See how other small businesses are growing with In-House</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"I was spending hours managing orders through DMs. Now I just send product cards through WhatsApp with payment links. My sales have doubled!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/50/50" alt="Testimonial author">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Handcrafted Jewelry</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"The automatic catalog creation from my Instagram posts saved me so much time. I didn't need to learn anything new, it just works!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/50/50" alt="Testimonial author">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ravi Patel</h4>
+                            <p>Home Baker</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"The pricing suggestions and inventory alerts helped me understand which products to focus on. My profits increased by 40% in just two months."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/50/50" alt="Testimonial author">
+                        </div>
+                        <div class="author-info">
+                            <h4>Meera Kapoor</h4>
+                            <p>Crochet Artist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="hero-shapes cta-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="cta-container">
+                <h2 class="cta-title">Ready to grow your creative business?</h2>
+                <p class="cta-description">Join the waitlist to be among the first to transform your social media into a thriving business hub.</p>
+                <form class="cta-form">
+                    <input type="email" placeholder="Enter your email address" class="cta-input">
+                    <button type="submit" class="cta-button">Get Early Access</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="footer-dot"></span>
+                        In-House
+                    </div>
+                    <p>Empowering micro-entrepreneurs to thrive in the digital economy without technical barriers. Built for people who create amazing things.</p>
+                </div>
+                <div class="footer-links-column">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Vision</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; 2025 In-House. All rights reserved.</div>
+                <div class="social-links">
+                    <a href="#" class="social-link">FB</a>
+                    <a href="#" class="social-link">IG</a>
+                    <a href="#" class="social-link">TW</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced JavaScript for interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Scroll animations for sections
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // Add staggered animation for feature cards
+                        if (entry.target.classList.contains('features-grid')) {
+                            const cards = entry.target.querySelectorAll('.feature-card');
+                            cards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, index * 200);
+                            });
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections and cards
+            document.querySelectorAll('section, .feature-card, .process-step').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Interactive form handling
+            const waitlistForm = document.querySelector('.waitlist-form');
+            if (waitlistForm) {
+                waitlistForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    
+                    // Show loading state
+                    const submitBtn = this.querySelector('button');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Joining...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate API call
+                    setTimeout(() => {
+                        // Show success message
+                        const successMessage = document.createElement('div');
+                        successMessage.style.cssText = `
+                            position: fixed;
+                            top: 20px;
+                            right: 20px;
+                            background: #00C851;
+                            color: white;
+                            padding: 16px 24px;
+                            border-radius: 8px;
+                            font-weight: 500;
+                            z-index: 1000;
+                            animation: slideIn 0.3s ease;
+                        `;
+                        successMessage.textContent = '🎉 Successfully joined the waitlist!';
+                        document.body.appendChild(successMessage);
+                        
+                        // Reset form
+                        this.reset();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        
+                        // Remove success message after 5 seconds
+                        setTimeout(() => {
+                            successMessage.remove();
+                        }, 5000);
+                    }, 2000);
+                });
+            }
+
+            // Typing animation for hero title
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle) {
+                const text = heroTitle.textContent;
+                heroTitle.textContent = '';
+                heroTitle.style.borderRight = '2px solid var(--accent1)';
+                
+                let i = 0;
+                function typeWriter() {
+                    if (i < text.length) {
+                        heroTitle.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 50);
+                    } else {
+                        setTimeout(() => {
+                            heroTitle.style.borderRight = 'none';
+                        }, 500);
+                    }
+                }
+                setTimeout(typeWriter, 1000);
+            }
+
+            // Interactive counter animation
+            function animateCount(element, target, duration = 2000) {
+                let start = 0;
+                const increment = target / (duration / 16);
+                const timer = setInterval(() => {
+                    start += increment;
+                    if (start >= target) {
+                        element.textContent = target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(start).toLocaleString();
+                    }
+                }, 16);
+            }
+
+            // Animate stats when they come into view
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statNumbers = entry.target.querySelectorAll('.stat-number');
+                        statNumbers.forEach(num => {
+                            const target = parseInt(num.dataset.count || num.textContent.replace(/,/g, ''));
+                            animateCount(num, target);
+                        });
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            });
+
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+
+            // Add interactive hover effects to buttons
+            document.querySelectorAll('.primary-btn, .secondary-btn').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.animation = 'pulse 0.6s ease-in-out';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.animation = '';
+                });
+            });
+
+            // Progress bar for page scroll
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 3px;
+                background: linear-gradient(to right, var(--accent1), var(--accent2));
+                z-index: 1001;
+                transition: width 0.3s ease;
+            `;
+            document.body.appendChild(progressBar);
+
+            window.addEventListener('scroll', () => {
+                const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.width = scrollPercent + '%';
+            });
+
+            // Add floating action button for "Back to Top"
+            const backToTop = document.createElement('button');
+            backToTop.innerHTML = '↑';
+            backToTop.style.cssText = `
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: var(--accent1);
+                color: white;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                z-index: 1000;
+                opacity: 0;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 12px rgba(255, 104, 71, 0.3);
+            `;
+            document.body.appendChild(backToTop);
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.style.opacity = '1';
+                    backToTop.style.transform = 'scale(1)';
+                } else {
+                    backToTop.style.opacity = '0';
+                    backToTop.style.transform = 'scale(0.8)';
+                }
+            });
+        });
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); }
+                to { transform: translateX(0); }
+            }
+            
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .feature-card:hover {
+                transform: translateY(-10px) scale(1.02);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            }
+            
+            .waitlist-form input:focus {
+                outline: none;
+                border-color: var(--accent1);
+                box-shadow: 0 0 0 3px rgba(255, 104, 71, 0.1);
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
