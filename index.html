@@ -1085,7 +1085,7 @@
         
         // Utility functions for button actions
         function scrollToWaitlist() {
-            const waitlistSection = document.querySelector('.cta');
+            const waitlistSection = document.querySelector('.cta-section');
             if (waitlistSection) {
                 waitlistSection.scrollIntoView({ 
                     behavior: 'smooth', 
@@ -1093,7 +1093,7 @@
                 });
                 
                 // Add visual feedback
-                const form = waitlistSection.querySelector('.waitlist-form');
+                const form = waitlistSection.querySelector('.cta-form');
                 if (form) {
                     form.style.transform = 'scale(1.02)';
                     form.style.boxShadow = '0 8px 32px rgba(255, 104, 71, 0.2)';
@@ -1265,7 +1265,7 @@
             });
 
             // Enhanced interactive form handling
-            const waitlistForm = document.querySelector('.waitlist-form');
+            const waitlistForm = document.querySelector('.cta-form');
             if (waitlistForm) {
                 const emailInput = waitlistForm.querySelector('input[type="email"]');
                 const submitBtn = waitlistForm.querySelector('button');
